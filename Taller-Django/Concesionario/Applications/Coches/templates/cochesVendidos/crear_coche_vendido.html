@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Inicio</title>
+
+    <style>
+        p {
+            color: black;
+            text-align: center;
+        }
+
+        footer,
+        span {
+            text-align: center;
+            display: block;
+            color: rgb(187, 186, 186);
+        }
+
+        h3 {
+            font-size: 25px !important;
+            color: #596275;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info static-top">
+        <div class="container">
+            <a class="navbar-brand" href="{%url 'home'%}">Distri Autos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'home'%}">Inicio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'listar_clientes'%}">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'listar_coches_vendidos'%}">Coches Vendidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'listar_revisiones'%}">Revisiones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3 class="mt-3"> Nuevo Coche Vendido</h3>
+            </div>
+        </div>
+
+
+        <div class="card row mt-2  offset-3 col-6">
+
+            <div class="card-body">
+
+                <form method='POST' class="mt-3 ">{%csrf_token%}
+
+                    <div class="row ">
+                        <div class="form-group col-6 text-center">
+                            <label for="nombres">Matricula</label>
+                            <div>{{form.matricula}} </div>
+
+                        </div>
+                        <div class="form-group col-6 text-center">
+                            <label for="apellidos">Marca</label>
+                            <div>{{form.marca}}</div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-6 text-center ">
+                            <label for="direccion">Modelo</label>
+                            <div>
+                                {{form.modelo}}
+                            </div>
+                        </div>
+
+                        <div class="form-group col-6 text-center">
+                            <label for="departamento">Color</label>
+                            <div>
+                                {{form.color}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-6 text-center">
+                            <label for="ciudad">Precio</label>
+                            <div>
+                                {{form.precio}}
+                            </div>
+                        </div>
+                        <div class="form-group col-6 text-center">
+                            <label for="zip">Extras</label>
+                            <div>
+                                {{form.extras_instalados}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-6 text-center">
+                            <label for="tel">Cliente</label>
+                            <div>
+                                {{form.codigo_cliente}}
+                            </div>
+                        </div>
+                        <div class="form-group col-6 text-center">
+                            <label for="datebirthday">Puertas</label>
+                            <div>
+                                {{form.numero_puertas}}
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-success"
+                            onclick="alert('Registro Creado con Exito!')">Enviar</button>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <footer>
+            <span> Copyright © 2020 - Anyi Jimenez y Zuleidy Yaruro Orozco</span>
+            <span>FUP-Créditos Libres III</span>
+
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>
